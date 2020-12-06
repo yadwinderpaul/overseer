@@ -26,7 +26,9 @@ The app is divide into 4 sections:
 - `npm run migrate up` to setup the database
 - `npm run seed` to create default user account
 - `npm run poller` to start the health check service
-- `npm run server` to start the web server
+- `npm start` to start the web server
+- Open `http://localhost:3000` in the browser
+- Use email: `admin@email.com` and password: `admin123` to login
 
 
 # Testing
