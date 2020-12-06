@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BarChart, Bar, Cell, Tooltip } from 'recharts'
+import { ResponsiveContainer, BarChart, Bar, Cell, Tooltip } from 'recharts'
 import { Link } from 'react-router-dom'
 import { Button, Row, Col, Typography, Space, Image } from 'antd'
 import { LeftOutlined } from '@ant-design/icons'
@@ -50,19 +50,24 @@ class ViewService extends Component {
               <Row>
                 <Col span={24}>
                   <Title level={5}>Service Uptime</Title>
-                  <BarChart width={300} height={80} data={this.props.statusUpdates}>
-                    <Tooltip
-                      allowEscapeViewBox={{ x: true, y: true }}
-                      formatter={this.tooltipFormatter}
-                    />
-                    <Bar dataKey='value' fill='#1bdeb0' radius={[4, 4, 4, 4]}>
-                      {
-                        this.props.statusUpdates.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.status ? '#1bdeb0' : '#ed1c5f'} />
-                        ))
-                      }
-                    </Bar>
-                  </BarChart>
+                  <ResponsiveContainer width={`${Math.min(this.props.statusUpdates.length * 4, 100)}%`} height={80}>
+                    <BarChart
+                      data={this.props.statusUpdates}
+                      barSize={20}
+                    >
+                      <Tooltip
+                        allowEscapeViewBox={{ x: true, y: true }}
+                        formatter={this.tooltipFormatter}
+                      />
+                      <Bar dataKey='value' fill='#1bdeb0' radius={[4, 4, 4, 4]}>
+                        {
+                          this.props.statusUpdates.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.status ? '#1bdeb0' : '#ed1c5f'} />
+                          ))
+                        }
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
                 </Col>
               </Row>
             </Col>
