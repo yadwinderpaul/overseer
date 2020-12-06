@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "standard-jsx", "standard-react"],
+  "rules": {
+    "react/prop-types": 0
+  },
+  "overrides": [{
+    "files": "*.test.js",
+    "env": {
+      "jest": true
+    }
+  }]
+}

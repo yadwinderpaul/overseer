@@ -1,0 +1,26 @@
+.logo {
+  width: 200px;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.logout {
+  text-align: end;
+}
+.logout a {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .logout a .text {
+    display: none;
+  }
+}
+
+.content {
+  padding: 20px;
+}

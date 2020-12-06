@@ -1,0 +1,25 @@
+.login-container {
+  background-color: #001529;
+  height: 500px;
+}
+
+.login-container .form {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.login-container .logo {
+  text-align: center;
+  width: 100%;
+  color: #001529;
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.login-container .form {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}

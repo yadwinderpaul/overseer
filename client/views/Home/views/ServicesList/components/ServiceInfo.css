@@ -1,0 +1,15 @@
+.service-card .ant-card-meta-avatar {
+  font-size: 36px;
+}
+
+.service-card .ant-card-meta-detail > div:not(:last-child) {
+  margin-bottom: 0px;
+}
+
+.service-card .ant-card-meta {
+  margin-bottom: 5px;
+}
+
+.service-card .description {
+  width: 100%;
+}
