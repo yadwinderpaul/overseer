@@ -115,10 +115,19 @@ class Services {
     const { userId, id } = data
     return this.dbConnection
       .query(
-        `delete from services where user_id = $1::uuid and id = $2::uuid
-        returning id, name, endpoint, description`,
+        `delete from status_updates where service_id = (
+          select id from services where user_id = $1::uuid and id = $2::uuid
+        );`,
         [userId, id]
       )
+      .then(_ => {
+        return this.dbConnection
+          .query(
+            `delete from services where user_id = $1::uuid and id = $2::uuid
+            returning id, name, endpoint, description`,
+            [userId, id]
+          )
+      })
       .then(rows => {
         if (rows.length === 0) {
           const error = new Error('No service deleted')

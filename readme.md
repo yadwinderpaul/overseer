@@ -6,16 +6,18 @@ The app is divide into 4 sections:
 - HTTP application using KoaJS, providing http APIs to the application
 - Web application using ReactJS
 
+### Screenshots
+![Overseer Screenshots](https://user-images.githubusercontent.com/10628635/105246290-52981f80-5b73-11eb-9b08-da9cdf037ad0.png "Overseer Screenshots")
 
-# Major Dependencies
 
+### Major Dependencies
 - `ReactJS` is used as a client side framework for listing the registered services, viewing their statuses, registering new services, modifying and deleting currently registered.
 - `KoaJS` is a lightweight wrapper over NodeJS http server which is used for providing http APIs for Overseer app
 - `BullMQ` is a Redis based queue implementation which is used for the polling of registered services asynchronously and independently.
 - `PostgreSQL` is used as persistence
 
 
-# Running and Setup on local
+### Running and Setup on local
 - Requirements:
     - NodeJS > 12, install from [here](https://nodejs.org/en/download/)
     - PostgreSQL > 9, server can be installed natively or run from the provided `docker-compose.yml` file
@@ -31,6 +33,6 @@ The app is divide into 4 sections:
 - Use email: `admin@email.com` and password: `admin123` to login
 
 
-# Testing
+### Testing
 The app does not have a lot of coverage. There are some unit tests added to showcase testing for server-side as well as client-side, which can be similarly added to other services and compoenents.
 Command for running tests: `npm test`
